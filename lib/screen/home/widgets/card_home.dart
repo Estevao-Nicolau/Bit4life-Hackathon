@@ -17,35 +17,35 @@ class CardHome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Bem-Vindo à Nossa Empresa',
+              'Welcome to Bit4life',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 16),
             Text(
-              'Nossa Empresa é especializada em fornecer soluções de alta qualidade para nossos clientes. Oferecemos uma variedade de serviços, incluindo:',
+              'What happens with someone’s Bitcon if this person dies? Well, we know the answer so let us tell you! Those bitcoins will stay forever on the person’s wallets in an unreachable, untouchable and inaccessible way until the end of the world. Dramatic right? But calm down, it doesn’t have to be like that and that is why we’re here :)',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 20,
               ),
             ),
             SizedBox(height: 16),
             ListTile(
               leading: Icon(Icons.check),
-              title: Text('Desenvolvimento de Aplicativos Móveis'),
+              title: Text('Heritage Planning regarding your Bitcoins'),
             ),
             ListTile(
               leading: Icon(Icons.check),
-              title: Text('Desenvolvimento Web'),
+              title: Text('Transfer your Bitcoins inheritance through Smart Contracts '),
             ),
             ListTile(
               leading: Icon(Icons.check),
-              title: Text('Consultoria em TI'),
+              title: Text('Safe, transparent and Highly Agile'),
             ),
             SizedBox(height: 16),
             Text(
-              'Nossa missão é fornecer soluções sob medida que atendam às necessidades específicas de nossos clientes. Entre em contato conosco para saber mais sobre como podemos ajudá-lo.',
+              'Click at the button below to know more!',
               style: TextStyle(
                 fontSize: 16,
               ),

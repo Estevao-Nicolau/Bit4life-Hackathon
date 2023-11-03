@@ -19,20 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
           verticalDirection: VerticalDirection.down,
           children: [
             Center(
-              child: Container(
-                alignment: Alignment.topLeft,
-                margin: const EdgeInsets.only(left: 20),
-                child: const Text(
-                  "BITLIFE",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              child: Image.asset('assets/logo.png'),
             ),
             const CardHome(),
              const CardService(),
+            
           ],
         )),
       ),

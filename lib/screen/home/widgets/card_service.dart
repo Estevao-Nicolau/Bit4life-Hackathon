@@ -12,20 +12,18 @@ class CardService extends StatefulWidget {
 class _CardServiceState extends State<CardService> {
   List<ServiceInfo> services = [
     ServiceInfo(
-      imageUrl: "https://picsum.photos/275/350",
-      title: "Service 1",
-      location: "Location 1",
+      image: '',
+      title: "Heritage Planning regarding your Bitcoins",
       rating: 4.7,
       description: "Description for Service 1",
       page: const Servico01(),
     ),
     ServiceInfo(
-      imageUrl: "https://picsum.photos/275/350",
-      title: "Service 2", // Change the title to something relevant
-      location: "Location 2", // Change the location to something relevant
-      rating: 4.5, // Change the rating to something relevant
-      description: "Description for Service 2", // Change the description
-      page: const Servico02(), // Use the Servico02 page
+      image: "",
+      title: "Click here for more",
+      rating: 4.5,
+      description: "Description for Service 2",
+      page: const Servico02(),
     ),
     // Define more services with their unique characteristics and pages here
   ];
@@ -34,7 +32,7 @@ class _CardServiceState extends State<CardService> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-      height: 350,
+      height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: services.length,
@@ -52,9 +50,7 @@ class _CardServiceState extends State<CardService> {
               );
             },
             child: CardItem(
-              imageUrl: services[index].imageUrl,
               title: services[index].title,
-              location: services[index].location,
               rating: services[index].rating,
               description: services[index].description,
             ),
@@ -66,17 +62,15 @@ class _CardServiceState extends State<CardService> {
 }
 
 class ServiceInfo {
-  final String imageUrl;
+  final String image;
   final String title;
-  final String location;
   final double rating;
   final String description;
   final Widget page;
 
   ServiceInfo({
-    required this.imageUrl,
+    required this.image,
     required this.title,
-    required this.location,
     required this.rating,
     required this.description,
     required this.page,
@@ -84,17 +78,13 @@ class ServiceInfo {
 }
 
 class CardItem extends StatelessWidget {
-  final String imageUrl;
   final String title;
-  final String location;
   final double rating;
   final String description;
 
-  const CardItem({
-    super.key,
-    required this.imageUrl,
+  const CardItem({super.key, 
+    
     required this.title,
-    required this.location,
     required this.rating,
     required this.description,
   });
@@ -104,12 +94,47 @@ class CardItem extends StatelessWidget {
     return Container(
       width: 275,
       margin: const EdgeInsets.only(right: 10.0),
-      child: const Card(
-        color: Colors.blue,
+      child: Card(
+        color: Colors.grey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.grey.shade700, // Cor cinza escura dentro do Card
+              height: 8, // Altura da faixa
+              width: double.infinity, // Largura total
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18, // Tamanho da fonte personalizável
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ), // Espaçamento entre o título e a descrição
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      fontSize: 14, // Tamanho da fonte personalizável
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
 
 class DescriptionPage extends StatelessWidget {
   final String title;
@@ -134,7 +159,7 @@ class DescriptionPage extends StatelessWidget {
         child: Column(
           children: [
             Text(description),
-            page, // Display the unique page content here
+            page,
           ],
         ),
       ),
